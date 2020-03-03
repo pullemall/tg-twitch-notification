@@ -21,7 +21,7 @@ Before deploying your web app you must create your own channel and bot which wil
 3. Subscription: `curl -H "Client-ID: [your-client-id]" -H "Content-Type: application/json" -X POST -d "{\"hub.callback\": \"https://[registraion-username].pythonanywhere.com/\", \"hub.mode\": \"subscribe\", \"hub.topic\":\"https://api.twitch.tv/helix/streams?user_id=[user_id]\", \"hub.lease_seconds\":\"864000\"}" https://api.twitch.tv/helix/webhooks/hub`
 (Detailed subscription process: https://dev.twitch.tv/docs/api/webhooks-reference)
 
-If you want to check your subscriptions you must create bearer token. At first generate secret key in your twitch application. Send GET request like this: `https://id.twitch.tv/oauth2/token?client_id=[client-id]&client_secret=[secret-key]&grant_type=client_credentials`. Then you will be able to check your subscriptions by sending request: `curl -H "Authorization: Bearer [TOKEN]" -X GET https://api.twitch.tv/helix/webhooks/subscriptions`
+If you want to check your subscriptions you must create bearer token first. At first generate secret key in your twitch application. Send GET request like this: `https://id.twitch.tv/oauth2/token?client_id=[client-id]&client_secret=[secret-key]&grant_type=client_credentials`. Then you will be able to check your subscriptions by sending request: `curl -H "Authorization: Bearer [TOKEN]" -X GET https://api.twitch.tv/helix/webhooks/subscriptions`
 
 ## Subscribing to webhooks on Youtube
 1. Use https://pubsubhubbub.appspot.com/subscribe for subscribing to notifications.
